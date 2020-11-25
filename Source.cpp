@@ -1,7 +1,7 @@
 #include<stdio.h>
-const int N = 5;
+const int N = 6;
 bool isPrime(int n) {
-	if (n < 2)
+	if (n>=0 &&n < 2)
 		return false;
 	else
 		for (int i = 2; i < n; i++) {
@@ -17,6 +17,7 @@ const char* no() {
 	return "isnotPtime";
 }
 int main() {
+	int countPrime = 0, countnotPrime = 0;
 	int arr[N];
 	for (int i = 0; i < N; i++) {
 		scanf_s("%d", &arr[i]);
@@ -27,13 +28,15 @@ int main() {
 			printf("%d = ", arr[i]);
 			printf(yes());
 			printf("\n");
+			countPrime++;
 		}
 		else
 		{
 			printf("%d = ", arr[i]);
 			printf(no());
 			printf("\n");
+			countnotPrime++;
 		}
 	}
-
+	printf("numberofPrime->%d\nnunberofnotPrme->%d", countPrime, countnotPrime);
 } 
